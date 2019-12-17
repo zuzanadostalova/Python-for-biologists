@@ -39,12 +39,12 @@
 
 # 1. caluculating AT content
 
-# dna = "ACTGATCGATTACGTATAGTATTTGCTATCATACATATATATCGATGCGTTCAT"
-# length = len(dna)
-# a_count = dna.count("A")
-# t_count = dna.count("T")
-# AT_content = (a_count + t_count) / length
-# print("AT content is " + str(AT_content))
+dna = "ACTGATCGATTACGTATAGTATTTGCTATCATACATATATATCGATGCGTTCAT"
+length = len(dna)
+a_count = dna.count("A")
+t_count = dna.count("T")
+AT_content = (a_count + t_count) / length
+print("AT content is " + str(AT_content))
 
 # 2. caluculating complementing DNA
 # dna = "ACTGATCGATTACGTATAGTATTTGCTATCATACATATATATCGATGCGTTCAT"
