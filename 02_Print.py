@@ -39,65 +39,65 @@
 
 # 1. caluculating AT content
 
-# dna = "ACTGATCGATTACGTATAGTATTTGCTATCATACATATATATCGATGCGTTCAT"
-# length = len(dna)
-# print(length)
-# a_count = dna.count("A")
-# t_count = dna.count("T")
-# print(a_count)
-# print(t_count)
-# AT_content = (a_count + t_count) / length
-# print("AT content is " + str(AT_content))
+dna = "ACTGATCGATTACGTATAGTATTTGCTATCATACATATATATCGATGCGTTCAT"
+length = len(dna)
+print(length)
+a_count = dna.count("A")
+t_count = dna.count("T")
+print(a_count)
+print(t_count)
+AT_content = (a_count + t_count) / length
+print("AT content is " + str(AT_content))
 
 # 2. caluculating complementing DNA
-# dna = "ACTGATCGATTACGTATAGTATTTGCTATCATACATATATATCGATGCGTTCAT"
-# Replacement1 = dna.replace("A","T")
-# print(Replacement1)
-# Replacement2 = Replacement1.replace("T","A")
-# print(Replacement2)
-# Replacement3 = Replacement2.replace("C","G")
-# print(Replacement3)
-# Replacement4 = Replacement3.replace("G","C")
-# print(Replacement4)
+dna = "ACTGATCGATTACGTATAGTATTTGCTATCATACATATATATCGATGCGTTCAT"
+Replacement1 = dna.replace("A","T")
+print(Replacement1)
+Replacement2 = Replacement1.replace("T","A")
+print(Replacement2)
+Replacement3 = Replacement2.replace("C","G")
+print(Replacement3)
+Replacement4 = Replacement3.replace("G","C")
+print(Replacement4)
 
 # 3. restriction fragment lengths
 # EcoRI cuts at G*AATTC
-# my_dna = "ACTGATCGATTACGTATAGTAGAATTCTATCATACATATATATCGATGCGTTCAT"
-# frag1_length = my_dna.find("GAATTC") + 1
-# frag2_length = len(my_dna) - frag1_length
-# print("length of fragment one is " + str(frag1_length))
-# print("length of fragment two is " + str(frag2_length))
+my_dna = "ACTGATCGATTACGTATAGTAGAATTCTATCATACATATATATCGATGCGTTCAT"
+frag1_length = my_dna.find("GAATTC") + 1
+frag2_length = len(my_dna) - frag1_length
+print("length of fragment one is " + str(frag1_length))
+print("length of fragment two is " + str(frag2_length))
 
 # 4. splicing out introns, part one
-# genomic_dna = "ATCGATCGATCGATCGACTGACTAGTCATAGCTATGCATGTAGCTACTCGATCGATCGATCGATCGATCGATCGATCGATCGATCATGCTATCATCGATCGATATCGATGCATCGACTACTAT"
-# # # print(genomic_dna)
-# length_genom = len(genomic_dna)
-# exon_1 = genomic_dna[0:63]
-# length_exon_1 = len(exon_1)
-# exon_2 = genomic_dna[90: ]
-# length_exon_2 = len(exon_2)
-# exon_percentage = (length_exon_1 + length_exon_2) / length_genom
-# print("Exon percentage is " + str(exon_percentage))
-# print(exon_1 + exon_2)
-# print(length_exon_1, exon_1, length_exon_2, exon_2, genomic_dna.replace(exon_2, ""), sep="\n")
+genomic_dna = "ATCGATCGATCGATCGACTGACTAGTCATAGCTATGCATGTAGCTACTCGATCGATCGATCGATCGATCGATCGATCGATCGATCATGCTATCATCGATCGATATCGATGCATCGACTACTAT"
+# print(genomic_dna)
+length_genom = len(genomic_dna)
+exon_1 = genomic_dna[0:63]
+length_exon_1 = len(exon_1)
+exon_2 = genomic_dna[90: ]
+length_exon_2 = len(exon_2)
+exon_percentage = (length_exon_1 + length_exon_2) / length_genom
+print("Exon percentage is " + str(exon_percentage))
+print(exon_1 + exon_2)
+print(length_exon_1, exon_1, length_exon_2, exon_2, genomic_dna.replace(exon_2, ""), sep="\n")
 
-# # 5. part two
-# genomic_dna = "ATCGATCGATCGATCGACTGACTAGTCATAGCTATGCATGTAGCTACTCGATCGATCGATCGATCGATCGATCGATCGATCGATCATGCTATCATCGATCGATATCGATGCATCGACTACTAT"
-# # # print(genomic_dna)
-# length_genome = len(genomic_dna)
-# exon_1 = genomic_dna[0:63]
-# length_exon_1 = len(exon_1)
-# exon_2 = genomic_dna[90: ]
-# length_exon_2 = len(exon_2)
-# exon_percentage = 100*((length_exon_1 + length_exon_2) / length_genome)
-# print("Exon percentage is " + str(exon_percentage))
-# non_coding = genomic_dna[63:90]
-# print(non_coding)
+# 5. part two
+genomic_dna = "ATCGATCGATCGATCGACTGACTAGTCATAGCTATGCATGTAGCTACTCGATCGATCGATCGATCGATCGATCGATCGATCGATCATGCTATCATCGATCGATATCGATGCATCGACTACTAT"
+# print(genomic_dna)
+length_genome = len(genomic_dna)
+exon_1 = genomic_dna[0:63]
+length_exon_1 = len(exon_1)
+exon_2 = genomic_dna[90: ]
+length_exon_2 = len(exon_2)
+exon_percentage = 100*((length_exon_1 + length_exon_2) / length_genome)
+print("Exon percentage is " + str(exon_percentage))
+non_coding = genomic_dna[63:90]
+print(non_coding)
 
 
-# 6 part three
-# genomic_dna = "ATCGATCGATCGATCGACTGACTAGTCATAGCTATGCATGTAGCTACTCGATCGATCGATCGATCGATCGATCGATCGATCGATCATGCTATCATCGATCGATATCGATGCATCGACTACTAT"
-# exon_1 = genomic_dna[0:63]
-# non_coding = genomic_dna[63:90]
-# exon_2 = genomic_dna[90: ]
-# print(exon_1.upper() + non_coding.lower() + exon_2.upper())
+# 6. part three
+genomic_dna = "ATCGATCGATCGATCGACTGACTAGTCATAGCTATGCATGTAGCTACTCGATCGATCGATCGATCGATCGATCGATCGATCGATCATGCTATCATCGATCGATATCGATGCATCGACTACTAT"
+exon_1 = genomic_dna[0:63]
+non_coding = genomic_dna[63:90]
+exon_2 = genomic_dna[90: ]
+print(exon_1.upper() + non_coding.lower() + exon_2.upper())
