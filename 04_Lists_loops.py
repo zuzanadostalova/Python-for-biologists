@@ -59,10 +59,10 @@ print("After sorting: " + str(ranks))
 for ape in apes:
     print(ape + " is an ape")
 
-variable used in a loop does not have an value, it is automatically set to each
-element of the list, different each time around the loop
-indented lines - body of the loop, otherwise block of code
-we cannot change the list while in the body of the loop
+# variable used in a loop does not have an value, it is automatically set to each
+# element of the list, different each time around the loop
+# indented lines - body of the loop, otherwise block of code
+# we cannot change the list while in the body of the loop
 
 apes = ["Homo sapiens", "Pan  troglodytes", "Gorilla gorilla"]
 
@@ -72,16 +72,16 @@ for ape in apes:
     print(ape + " is an ape. Its name starts with " + first_letter)
     print("It's name has " + str(name_length) + " letters.")
 
-two print statements - everytime two lines of output
-if only two print statements - easier changes
-adding elements to the loop - we do not need to change the loop
+# two print statements - everytime two lines of output
+# if only two print statements - easier changes
+# adding elements to the loop - we do not need to change the loop
 
 # Indentation errors
 apes = ["Homo sapiens", "Pan  troglodytes", "Gorilla gorilla"]
 
 for ape in apes:
     name_length = len(ape)
-   first_letter = ape[0]
+    first_letter = ape[0]
     print(ape + " is an ape. Its name starts with " + first_letter)
 
 # because the lines of the code do not match up
