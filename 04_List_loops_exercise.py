@@ -42,13 +42,14 @@
 #     print("The length is " + str(len(trimmed)))
 
 # Multiple exons from gDNA
-file = open("exons.txt")
-output = open("04_Numbers.txt", "w")
-for line in file:
-    # print(line)
-    single = line.replace(",", "\n")
-    print(single)
-    output.write(single)
-    print(type(single))
-    # number = int(single)
-    print(type(single))
+genomic_dna = open("genomic_dna.txt").read()
+exon_locations = open("exons.txt")
+coding_sequence = ""
+for line in exon_locations:
+    positions = line.split(",")
+    start = positions[0]
+    stop = positions[1]
+    print("The start is " + start + ", the stop is " + stop)
+    exon = genomic_dna[start:stop]
+    coding_sequence = coding_sequence + exon
+    print("The coding sequence is : " + coding_sequence)
