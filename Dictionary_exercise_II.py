@@ -141,12 +141,12 @@
 #     # string
 # print(dictionary)
 
-# # 25. Write a Python program to print a dictionary in table format. 
+# ??? 25. Write a Python program to print a dictionary in table format. 
 # my_dict = {'C1':[1,2,3],'C2':[5,6,7],'C3':[9,10,11]}
 # for row in zip(*([key] + (value) for key, value in sorted(my_dict.items()))):
 #     print(row)
 
-# # 26. Write a Python program to count the values associated with key in a dictionary.
+# ??? 26. Write a Python program to count the values associated with key in a dictionary.
 # list_ = [{'id': 1, 'success': True, 'name': 'Lary'}, {'id': 2, 'success': False, 'name': 'Rabi'}, 
 # {'id': 3, 'success': True, 'name': 'Alex'}]
 # import itertools  
@@ -224,3 +224,57 @@ l = ["id1", "a", "A", "id2", "b", "B", "id3", "c", "C", "id4", "d", "D", "id5", 
 # sorted_dict = {x: sorted(y) for x, y in d.items()}
 # print(sorted_dict)
 # # {'n1': [1, 2, 3], 'n2': [1, 2, 5], 'n3': [2, 3, 4]}
+
+# # 29. Write a Python program to remove spaces from dictionary keys.
+# # Sol. I:
+# d = {'n  1': [2, 3, 1], 'n  2': [5, 1, 2], 'n   3': [3, 2, 4]}
+# d = {k.replace(" ",""): v for k,v in d.items()}
+# print(d)
+# # {'n1': [2, 3, 1], 'n2': [5, 1, 2], 'n3': [3, 2, 4]}
+
+# d_new = d = {}
+# for key in inside_d:
+#     d[key] = {}
+#     d = d[key]
+# print(d_new)
+
+# T - ch, l, a...F - j, s
+
+# # ?? Sol. II:
+# d = {'n  1': [2, 3, 1], 'n  2': [5, 1, 2], 'n   3': [3, 2, 4]}
+# d = {x.translate({32: None}): y for x, y in d.items()}
+# print(d)
+# # The translate() method takes the translation table to replace/translate 
+# # characters in the given string as per the mapping table.
+# # {'n1': [2, 3, 1], 'n2': [5, 1, 2], 'n3': [3, 2, 4]}
+
+# # 30. Write a Python program to get the top three items in a shop. 
+# # Sample data: {'item1': 45.50, 'item2':35, 'item3': 41.30, 'item4':55, 'item5': 24}
+# # Sol. I:
+# from heapq import nlargest
+# data = {'item1': 45.50, 'item2':35, 'item3': 41.30, 'item4':55, 'item5': 24}
+# # for key, value in data.items():
+#     # print(key, value)
+# three_largest = nlargest(3, data, key=data.get)
+# print(three_largest)
+# # ['item4', 'item1', 'item3']
+
+# from operator import itemgetter
+# for key, value in nlargest(3, data.items(), key=itemgetter(1)):
+#     print(key, value)
+# # item4 55
+# # # item1 45.5
+# # # item3 41.3
+
+# # Sol. II:
+# from operator import itemgetter
+# data = {'item1': 45.50, 'item2':35, 'item3': 41.30, 'item4':55, 'item5': 24}
+# for key, value in nlargest(3, data.items(), key=itemgetter(1)):
+#     print(key,value)
+# # item4 55
+# # item1 45.5
+# # item3 41.3
+
+# 31. Write a Python program to get the key, value and item in a dictionary. 
+dict_num = {1: 10, 2: 20, 3: 30, 4: 40, 5: 50, 6: 60}
+count = []
