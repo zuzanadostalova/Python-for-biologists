@@ -238,7 +238,7 @@ l = ["id1", "a", "A", "id2", "b", "B", "id3", "c", "C", "id4", "d", "D", "id5", 
 #     d = d[key]
 # print(d_new)
 
-# T - ch, l, a...F - j, s
+# F - j, s
 
 # # ?? Sol. II:
 # d = {'n  1': [2, 3, 1], 'n  2': [5, 1, 2], 'n   3': [3, 2, 4]}
@@ -277,4 +277,191 @@ l = ["id1", "a", "A", "id2", "b", "B", "id3", "c", "C", "id4", "d", "D", "id5", 
 
 # 31. Write a Python program to get the key, value and item in a dictionary. 
 dict_num = {1: 10, 2: 20, 3: 30, 4: 40, 5: 50, 6: 60}
-count = []
+
+# Sol. I:
+# print("key","value","count")
+# for key, value in dict_num.items():
+#     count = key
+#     print(key, " ", value, "   ", count)
+
+# # Enumerate() - count of iterations
+# # Sol. II:
+# print("key","value","count")
+# for count, (key, value) in enumerate(dict_num.items(), 1):
+#     print(key, " ", value, "   ", count)
+# # Sol.I + Sol.II output:
+# # key value count
+# # 1   10     1
+# # 2   20     2
+# # 3   30     3
+# # 4   40     4
+# # 5   50     5
+# # 6   60     6
+
+# # 32. Write a Python program to print a dictionary line by line.
+# students = {'Aex':{'class':'V',
+#         'rolld_id':2},
+#         'Puja':{'class':'V',
+#         'roll_id':3}}
+# # for line in students:
+# #     print(line)
+# for key in students:
+#     print (key)
+#     for value in students[key]:
+#         print (value,':',students[key][value])
+#     # replace - string
+
+# # 33. Write a Python program to check if multiple keys exist in a dictionary.
+# # Sol.I:
+# students = {'Aex':{'class':'V',
+#         'rolld_id':2},
+#         'Puja':{'class':'V',
+#         'roll_id':3}}
+# print(len(students)) # number of keys 2
+# print(students.keys() >= {"Aex", "Puja"}) # True
+# print(students.keys() >= {"Aex", "roll_id"}) # False
+
+# # Sol.II:
+# student = {
+#   'name': 'Alex',
+#   'class': 'V',
+#   'roll_id': '2'
+# }
+
+# # print(len(student)) # number of keys 3
+# print(student.keys() >= {"class", "name"}) # True
+# print(student.keys() >= {"class", "Alex"}) # False
+# print(student.keys() >= {"class", "roll_id"}) # True
+
+# # 34. Write a Python program to count number of items in a dictionary value that is a list.
+# dict =  {'Alex': ['subj1', 'subj2', 'subj3'], 'David': ['subj1', 'subj2']}
+
+# # Sol.I:
+# print(len(dict.keys()))
+# # 2 - just keys
+
+# print(len(set(open("Dict1.txt").read().split())))
+# # 6 - all unique words in the file
+
+# # Sol.II:
+# ctr = sum(map(len, dict.values()))
+# print(ctr)
+# # 5 - why the difference?
+
+# # 35. Write a Python program to sort Counter by value
+# from collections import Counter
+# dicti = Counter({'Math':81, 'Physics':83, 'Chemistry':87})
+# print(dicti)
+# # Counter({'Chemistry': 87, 'Physics': 83, 'Math': 81})
+# print(dicti.most_common()) # the same function indeed
+
+# 36. Write a Python program to create a dictionary from two lists without losing duplicate values
+# # Sample lists: ['Class-V', 'Class-VI', 'Class-VII', 'Class-VIII'], [1, 2, 2, 3]
+# list_ = ['Class-V', 'Class-VI', 'Class-VII', 'Class-VIII']
+# id_list = [1, 2, 2, 3]
+# # d = {key: value for (key, value) in list_}
+# # print(d)
+
+# from collections import defaultdict
+# temp = defaultdict(set)
+# for c, i in zip(list_, id_list):
+#     temp[c].add(i)
+# print(temp)
+# defaultdict(<class 'set'>, {'Class-V': {1}, 'Class-VI': {2}, 'Class-VII': {2}, 'Class-VIII': {3}})
+
+
+# 37. Write a Python program to replace dictionary values with their sum.
+# dict_num = {1: 10, 2: 20, 3: 30, 4: 40, 5: 50, 6: 60}
+# ctr = sum(dict_num.values())
+# print(ctr)
+
+# student_details= [
+#   {'id' : 1, 'subject' : 'math', 'V' : 70, 'VI' : 82},
+#   {'id' : 2, 'subject' : 'math', 'V' : 73, 'VI' : 74},
+#   {'id' : 3, 'subject' : 'math', 'V' : 75, 'VI' : 86}
+# ]
+
+# def sum_v1_v2_average(student_details):
+#     for d in student_details:
+#         v1 = d.pop('V')
+#         v2 = d.pop('VI')
+#         d['V+VI'] = (v1 + v2)/2
+#     return student_details
+# print(sum_v1_v2_average(student_details))
+
+# # [{'subject': 'math', 'id': 1, 'V+VI': 76.0}, {'subject': 'math', 'id': 2, 'V+VI': 73.5}, {'subject': 'math', 
+# # 'id': 3, 'V+VI': 80.5}]
+
+# 38. Write a Python program to match key values in two dictionaries.
+dict_ = {'key1': 1, 'key2': 3, 'key3': 2}
+dict_1 = {'key1': 1, 'key2': 2}
+
+# for key in dict_:
+#     # value = dict_1[key]
+#     if key in dict_1:
+#         if dict_[key] == dict_1[key]:
+#             print("These keys are the same: " + key)
+#         else:
+#             print("These keys differ: " + key)
+# These keys are the same: key1
+# These keys differ: key2
+
+# for (key, value) in set(dict_.items()) & set(dict_1.items()):
+#     print('%s: %s is present in both dict_ and dict_1' % (key, value))
+
+# 39. Write a Python program to store a given dictionary in a json file. 
+# Original dictionary:
+# {'students': [{'firstName': 'Nikki', 'lastName': 'Roysden'}, {'firstName': 'Mervin', 'lastName': 'Friedland'}, {'firstName': 'Aron ', 'lastName': 'Wilkins'}], 'teachers': [{'firstName': 'Amberly', 'lastName': 'Calico'}, {'firstName': 'Regine', 'lastName': 'Agtarap'}]}
+# <class 'dict'>     
+
+dicti = {'students': [{'firstName': 'Nikki', 'lastName': 'Roysden'}, {'firstName': 'Mervin', 
+'lastName': 'Friedland'}, {'firstName': 'Aron ', 'lastName': 'Wilkins'}], 'teachers': 
+[{'firstName': 'Amberly', 'lastName': 'Calico'}, {'firstName': 'Regine', 'lastName': 'Agtarap'}]}
+
+# Sol.I:
+import json
+with open('result.json', 'w') as fp:
+    json.dump(dicti, fp)   
+
+with open('result.json') as f:
+  data = json.load(f)
+print(data)
+# {'students': [{'firstName': 'Nikki', 'lastName': 'Roysden'}, {'firstName': 'Mervin', 
+# 'lastName': 'Friedland'}, {'firstName': 'Aron ', 'lastName': 'Wilkins'}], 'teachers': 
+# [{'firstName': 'Amberly', 'lastName': 'Calico'}, {'firstName': 'Regine', 'lastName': 'Agtarap'}]}
+print(type(data))
+
+# Sol.II:
+d = {"students":[{"firstName": "Nikki", "lastName": "Roysden"},
+               {"firstName": "Mervin", "lastName": "Friedland"},
+               {"firstName": "Aron ", "lastName": "Wilkins"}],
+"teachers":[{"firstName": "Amberly", "lastName": "Calico"},
+         {"firstName": "Regine", "lastName": "Agtarap"}]}
+print("Original dictionary:")
+print(d)
+print(type(d))
+import json
+ 
+with open("dictionary", "w") as f:
+   json.dump(d, f, indent = 4, sort_keys = True)
+ 
+print("\nJson file to dictionary:")
+with open('dictionary') as f:
+ data = json.load(f)
+print(data)
+
+# 40. Write a Python program to create a dictionary of keys x, y, and z where each key has as 
+# value a list from 11-20, 21-30, and 31-40 respectively. Access the fifth value of each key from 
+# the dictionary.
+{'x': [11, 12, 13, 14, 15, 16, 17, 18, 19],
+'y': [21, 22, 23, 24, 25, 26, 27, 28, 29],
+'z': [31, 32, 33, 34, 35, 36, 37, 38, 39]}
+
+from pprint import pprint
+dict_nums = dict(x=list(range(11, 20)), y=list(range(21, 30)), z=list(range(31, 40)))
+print(dict_nums)
+print(dict_nums["x"][4])
+print(dict_nums["y"][4])
+print(dict_nums["z"][4])
+for k,v in dict_nums.items():
+   print(k, "has value", v)
