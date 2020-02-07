@@ -386,7 +386,7 @@ dict_num = {1: 10, 2: 20, 3: 30, 4: 40, 5: 50, 6: 60}
 #         v1 = d.pop('V')
 #         v2 = d.pop('VI')
 #         d['V+VI'] = (v1 + v2)/2
-#     return student_details
+#     return student_details # why?
 # print(sum_v1_v2_average(student_details))
 
 # # [{'subject': 'math', 'id': 1, 'V+VI': 76.0}, {'subject': 'math', 'id': 2, 'V+VI': 73.5}, {'subject': 'math', 
